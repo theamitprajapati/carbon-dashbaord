@@ -1,0 +1,121 @@
+@use '@carbon/react';
+@use '@carbon/react/scss/breakpoint' as *;
+
+body{
+  background-color: #f4f7fb;
+}
+/// Remove overrides once Carbon bugs are fixed upstream.
+/// Need grid option to not add page gutters at large viewports, to also use when nesting grids
+/// @link https://github.com/carbon-design-system/carbon/issues/2792
+@media (min-width: 42rem) {
+  .cds--grid--no-gutter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/// Padding was introduced in 10.3.0, needs an option to let grid set the viewport gutter
+/// @link https://github.com/carbon-design-system/carbon/issues/3010
+.cds--content {
+  margin-top: 3rem;
+  padding: 0;
+  background: var(--cds-background);
+}
+
+.cds--content .cds--css-grid {
+  max-width: 100%;
+  @include breakpoint(md) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/// Padding was introduced in 10.3.0, needs an option to let grid set the viewport gutter
+/// @link https://github.com/carbon-design-system/carbon/issues/3010
+// .bx--content {
+//   padding: 0;
+
+//   //Added for CSS issue with z-index applied to "::before"
+//   transform: translate3d(0,0,0);
+// }
+
+
+.cds--structured-list{
+  border-collapse:inherit !important;
+  inline-size:50%;
+}
+
+.overview-card__info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e9e9e9;
+  background: #ffffff;
+}
+
+.overview-card__title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+// Image
+.overview-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cds--header{
+  background-color:#152935
+}
+a.cds--header__menu-item{
+  background-color:#152935
+}
+//#152935
+//#f4f7fb
+
+.card {
+  border: 1px solid #ddd;
+  
+  background-color: #fff;
+  max-width: 100%;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  padding: 8px;
+  padding-bottom: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between; /* Align title and button */
+  align-items: center; /* Center items vertically */
+  border-bottom: 2px solid #ddd;
+}
+
+.card-body {
+  font-size: 1em;
+  padding: 8px;
+}
+// .cds--contained-list-item{
+ 
+//   height: 30px;
+// }
+.cds--contained-list-item__content{
+  height: 45px !important;
+}
+.cds--contained-list-item{
+  height: 40px;
+}
